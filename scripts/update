@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# update is a script for updating the packages on a debian-based system using apt
+# Performs the typical apt update && apt upgrade with added quality of life improvements
+# like showing the list of packages to be upgraded, perform autoremove and also updating snaps.
+
+echo "### Updating package database ###"
+sudo apt update
+
+echo "### Listing upgradable packages ###"
+sudo apt list --upgradable
+
+echo "### Upgrading packages ###"
+sudo apt -y upgrade
+
+echo "### Performing autoremove ###"
+sudo apt -y autoremove
+
+echo "### Snap refresh ###"
+sudo snap refresh
