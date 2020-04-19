@@ -8,3 +8,4 @@ if [ ! -d $HOME/bin ]; then
 fi
 
 cp -ru scripts/* $HOME/bin
+mv bashrc/bash_functions
